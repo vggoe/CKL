@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登录界面</title>
+		<style>
+			/* 划过提示 */
+			#dde {
+				height: 80px;
+			}
+
+			.asd {
+				cursor: pointer;
+			}
+
+			.sc {
+				margin-top: -10px;
+				display: none;
+				background-color: violet;
+			}
+
+
+			/* 密码隐藏 */
+			#comm {
+				width: 300px;
+				height: 300px;
+				background-color: red;
+				color: white;
+				margin: 30px auto;
+				text-align: center;
+				line-height: 50px;
+				position: relative;
+			}
+
+			.asad {
+				width: 300px;
+				c height: 46px;
+				border-bottom: 1px solid black;
+				position: relative;
+			}
+
+			#eye {
+				width: 15px;
+				position: absolute;
+				top: 90px;
+				left: 210px;
+
+			}
+
+
+
+
+
+			/* 弹窗关闭 */
+			#denglu {
+				display: none;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 300px;
+				height: 150px;
+				margin-left: -200px;
+				margin-top: -75px;
+				border: 1px solid #888;
+				background-color: #def;
+				text-align: center;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.w {
+				position: absolute;
+				top: 1px;
+				right: 5px;
+			}
+
+
+
+
+			/* 轮播图 */
+			#luo {
+				width: 500px;
+				height: 600px;
+				border: 1px solid;
+				padding: 0;
+				position: relative;
+			}
+
+			#luo ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+
+			#luo li {
+				float: left;
+				margin-right: 20px;
+			}
+
+			#luo li img {
+				width: 100px;
+				height: 100px;
+			}
+
+			#luo li:hover {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="dde">
+			<h1>划过提示</h1>
+			<button class="asd">按钮</button>
+			<div class="sc">
+				<p>这个是按钮！！！</p>
+			</div>
+		</div>
+		<br>
+
+		<h1>搜索框</h1>
+		<input type="text" style="color: Gray" value="请输入内容" onfocus="TxtFocus(this)" onblur="TxtBlur(this)" />
+
+		<div id="comm">
+			<h1>密码隐藏</h1>
+			<!-- <input type='text' value='请输入账号：'> -->
+			<input type="password" value="123456" id="asad">
+			<label for=""><img src="img/eyenone.png" id='eye'>
+			</label>
+		</div>
+		<br>
+
+
+		<h1>弹窗关闭</h1>
+		<a href="javascript:opendenglu() " onclick="closedenglu()">按钮</a>
+		<div id="denglu">
+			<form>
+				<p>用户账号：<input type="text" /></p>
+				<p>用户密码：<input type="password" /></p>
+				<input type="submit" name="" value="确认提交" />
+				<span></span><input type="reset" value="重填" />
+				<a href="javascript:closedenglu();" onclick="closedenglu()" class="w">×</a>
+			</form>
+			<br>
+		</div>
+
+
+		<h1>轮播图</h1>
+		<div id="luo">
+			<img src="img/guozhi.jpg" width="100%" height="80%" class="d">
+			<ul>
+				<li class="d1"><img src="img/shou1.jpg"></li>
+				<li class="d2"><img src="img/shou2.jpg"></li>
+				<li class="d3"><img src="img/shou3.jpg"></li>
+				<li class="d4"><img src="img/shou4.jpg"></li>
+			</ul>
+		</div>
+
+
+
+
+		<script type="text/javascript">
+			//划过提示
+			const an = document.querySelector('.asd');
+			const sc = document.querySelector('.sc');
+			an.onmousemove = function() {
+				sc.style.display = 'block';
+			}
+			an.onmouseout = function() {
+				sc.style.display = 'none';
+			}
+
+
+			//搜索框
+			function TxtFocus(txt) {
+				if (txt.value == "请输入内容") {
+					txt.value = "";
+				}
+			}
+
+			function TxtBlur(txt) {
+				if (txt.value == "请输入内容" || txt.value.length <= 0) {
+					txt.value = "请输入内容";
+				}
+			}
+
+
+			//密码隐藏
+			let asad = document.getElementById('asad');
+			let img = document.getElementById('eye');
+			let ye = 0;
+			img.onclick = function() {
+				if (ye == 0) {
+					asad.type = 'text';
+					eye.src = "img/eyesee.png";
+					ye = 1;
+
+				} else {
+					asad.type = 'password';
+					eye.src = "img/eyenone.png";
+					ye = 0;
+				}
+			}
+
+
+
+
+			//弹出窗口
+			function opendenglu() {
+				document.getElementById('denglu').style.display = 'block';
+			};
+
+			function closedenglu() {
+				document.getElementById('denglu').style.display = 'none';
+			};
+			//图片切换
+			const d1 = document.querySelector('.d1');
+			const d2 = document.querySelector('.d2');
+			const d3 = document.querySelector('.d3');
+			const d4 = document.querySelector('.d4');
+			const d = document.querySelector('.d');
+			d1.onmouseover = function() {
+				d.src = 'img/shou1.jpg';
+			}
+			d2.onmouseover = function() {
+				d.src = 'img/shou2.jpg';
+			}
+			d3.onmouseover = function() {
+				d.src = 'img/shou3.jpg';
+			}
+			d4.onmouseover = function() {
+				d.src = 'img/shou4.jpg';
+			}
+		</script>
+	</body>
+</html>
