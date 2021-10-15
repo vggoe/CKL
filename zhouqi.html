@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		#srcde td {
+		   padding: 10px;
+		   border: 1px solid gray;
+		  }</style>
+	</head>
+	<body>
+		<h1>5.1</h1>
+		<button>比较按钮</button>
+		<p></p>
+		
+		<script>
+		//第一题
+		document.write('<h1>1、9×9乘法表</h1>')
+		   document.write('<table border=1px >')
+		   for (let i=1;i<=9;i++){
+		    document.write("<tr align='center'>");
+		        for (let j=1;j<=i;j++) {
+		            document.write("<td>" + j + "*" + i + "=" + i * j + "&nbsp;&nbsp;&nbsp;</td>");
+		        }
+		        document.write("</tr>");
+		   }
+		   document.write('</table>');
+		   
+		//第二题
+		document.write('<h1>2、12×12乘法表</h1>');
+		   document.write('<table cellspacing = 0 id="srcde">');
+		   for (let i = 0; i <= 13; i++) {
+		    document.write('<tr>');
+		    for (let j = 0; j <= 13; j++) {
+		     document.write('<td>');
+		     if (i == 0 && j == 0) {
+		      document.write('x');
+		     } else if (i == 0) {
+		      document.write(`${j - 1}`);
+		     } else if (j == 0) {
+		      document.write(`${i - 1}`);
+		     } else {
+		      document.write(`${(i - 1) * (j - 1)}`);
+		     }
+		     document.write('</td>');
+		    }
+		    document.write('</tr>');
+		   }
+		   document.write('</table>');
+		   document.querySelector('table').style.borderCollapse = 'collapse';
+		   
+		//第三题
+		document.write('<h1>3、 0~99表</h1>')
+		   for (let thre = 0; thre <= 99; thre++) {
+		    if (thre <= 9) {
+		     document.write('0' + thre + ' ');
+		    } else {
+		     document.write(thre + ' ');
+		    }
+		    if ( thre % 10 == 9) {
+		     document.write("</br>");
+		    }
+		   }
+		   
+		//第四题
+		document.write('<h1>4、循环输出1-100的数字</h1>')
+			let sou = '';let Ae = '';
+			let wou = '';let Be = '';
+			let tou = '';let Ce = '';
+			for (let i = 1; i <101; i++) {
+				if (i % 3 == 0) {
+					sou += i+'A';
+					Ae++;
+				}
+			};
+			for (let i = 1; i < 101; i++) {
+				if (i % 5 == 0) {
+					wou += i+'B';
+					Be++;
+				}
+			};
+			for (let i = 1; i < 101; i++) {
+				if ((i % 3 == 0) && (i % 5 == 0)) {
+					tou += i+'C';
+					Ce++;
+				}
+			};
+			    document.write(sou);
+				document.write('  A的个数是:');document.write(Ae);
+				document.write('<br>');
+				document.write(wou);
+				document.write(' B的个数是:');document.write(Be);
+				document.write('<br>');
+				document.write(tou);
+				document.write(' C的个数是:');document.write(Ce);
+				
+			//第五题
+			//1.
+			const button=document.querySelector('button');
+			button.addEventListener('click',function(){
+				let A=Number(prompt('输入a的值：'));
+				let B=Number(prompt('输入b的值：'));
+					if(A>B){
+					alert('a大于b');
+					}else if(A<B){
+					alert('a小于b');
+					}else if(A=B){
+					alert('a等于b');
+					}
+				});
+			//2.
+			document.write('<h1>5.2</h1>')
+				let a=1;
+				let b=2;
+				let c=a+b;
+				document.write(c);
+				document.write('<br>')
+				let c1=((a.toFixed())+(b.toFixed()));
+				document.write(c1);
+		</script>
+	</body>
+</html>
