@@ -5,121 +5,124 @@
 		<title></title>
 	</head>
 	<body>
-		
+
 		<script>
-		//2.1
-		document.write('<h1>2.1</h1>');
-			let a=2;
-			let b=3;
-			if(a>b){
+			//2.1
+			document.write('<h1>2.1</h1>');
+			let a = 2;
+			let b = 3;
+			if (a > b) {
 				document.write('a大于b');
-			}else if(a<b){
+			} else if (a < b) {
 				document.write('a小于b');
-			}else if(a===b){
+			} else if (a === b) {
 				document.write('a等于于b');
 			}
 			document.write('<hr>');
-		//2.2
-		document.write('<h1>2.2</h1>');
-		let a1=5;
-		if(a1%5===0){
-			document.write('可以被5整除');
-		}else if(a1%5!=0){
-			document.write('不可以被5整除');
-		}
-		document.write('<hr>');
-		//2.3
-		document.write('<h1>2.3</h1>');
-		for(let i=0;i<=100;i+=2){
-					
-			document.write(i+' ');
-		}
-		document.write('<hr>');
-		//2.4
-		document.write('<h1>2.4</h1>');
-		let a2=0;
-		while(a2<=100){
-			a2+=6;
-			a2++;
-			if(a2>100){
-				break;
+			//2.2
+			document.write('<h1>2.2</h1>');
+			let a1 = 5;
+			if (a1 % 5 === 0) {
+				document.write('可以被5整除');
+			} else if (a1 % 5 != 0) {
+				document.write('不可以被5整除');
 			}
-			document.write(a2+' ');
-			
-		}
-		document.write('<hr>');
-		//2.5
-		document.write('<h1>2.5</h1>');
-		let a3=56;
-		let b3=275;
-		let c3=42;
-		if(a3>b3&&a3>c3){
-			document.write('a最大：a的值'+a3);
-		}else if(b3>a3&&b3>c3){
-			document.write('b最大：b的值'+b3);
-		}else if(b3<c3&&a3<c3){
-			document.write('b最大：b的值'+c3);
-		}
-		document.write('<hr>');
-		
-		//3.1
-		document.write('<h1>3.1</h1>');
-		document.write('偶数:'+' ')
-		for(let i=0;i<=100;i++){
-			if(i%2===0){	
-			document.write(i+' ');}
-		}
-		document.write('<br>'+'奇数:'+' ')
-		for(let i=0;i<100;i++){
-			if(i%2===0){	
-			document.write(i+1+' ');}
-		}
-		document.write('<hr>');
-		//3.2
-		document.write('<h1>3.2</h1>');
-		       document.write('在控制台中修改函数test([])中括号中填写数数组改变结果');
-		       document.write('<br>');
-		       function test(a) {
-		           let c = '';
-		           let b = 0;
-		           for(let i = a.length - 1; i >= 0; i--) {
-		               b += a[i];
-		               if(i == 0) {
-		                   c += a[i] + '=';
-		                   continue;
-		               }
-		               c += a[i] + '+';
-		           }
-		           document.write(c + b);
-		       }
-		       test([1, 2, 3,4,5,6]);
-		       document.write('<hr>');
-		
-		document.write('<h1>三、</h1>');
-		document.write('请输入a：');
-		        document.write('<input type="text" class="a">');
-		        document.write('<br>');
-		        document.write('请输入b：');
-		        document.write('<input type="text" class="b">');
-		        document.write('<br>');
-		        document.write('<button>比较</button>');
-		        document.write('<p></p>');
-		        const inputa = document.querySelector('.a');
-		        const inputb = document.querySelector('.b');
-		        const pare = document.querySelector('p');
-		        document.querySelector('button').onclick = function(e) {
-		            if (isNaN(inputa.value) || isNaN(inputb.value)|| inputa.value===''||inputb.value==='') {
-		                pare.textContent = '请输入数字';
-		            } else {
-		                if(Math.floor(inputa.value) > Math.floor(inputb.value)) {
-		                    pare.textContent = 'a的数值大';
-		                } else if(Math.floor(inputa.value) < Math.floor(inputb.value)){
-		                    pare.textContent = 'b的数值大';
-		                }  
-		            }
-		        }
-		        
-		document.write('<hr>');
+			document.write('<hr>');
+			//2.3
+			document.write('<h1>2.3</h1>');
+			for (let i = 0; i <= 100; i += 2) {
+
+				document.write(i + ' ');
+			}
+			document.write('<hr>');
+			//2.4
+			document.write('<h1>2.4</h1>');
+			let a2 = 0;
+			while (a2 <= 100) {
+				a2 += 6;
+				a2++;
+				if (a2 > 100) {
+					break;
+				}
+				document.write(a2 + ' ');
+
+			}
+			document.write('<hr>');
+			//2.5
+			document.write('<h1>2.5</h1>');
+			let a3 = 56;
+			let b3 = 275;
+			let c3 = 42;
+			if (a3 > b3 && a3 > c3) {
+				document.write('a最大：a的值' + a3);
+			} else if (b3 > a3 && b3 > c3) {
+				document.write('b最大：b的值' + b3);
+			} else if (b3 < c3 && a3 < c3) {
+				document.write('b最大：b的值' + c3);
+			}
+			document.write('<hr>');
+
+			//3.1
+			document.write('<h1>3.1</h1>');
+			document.write('偶数:' + ' ')
+			for (let i = 0; i <= 100; i++) {
+				if (i % 2 === 0) {
+					document.write(i + ' ');
+				}
+			}
+			document.write('<br>' + '奇数:' + ' ')
+			for (let i = 0; i < 100; i++) {
+				if (i % 2 === 0) {
+					document.write(i + 1 + ' ');
+				}
+			}
+			document.write('<hr>');
+			//3.2
+			document.write('<h1>3.2</h1>');
+			document.write('在控制台中修改函数test([])中括号中填写数数组改变结果');
+			document.write('<br>');
+
+			function test(a) {
+				let c = '';
+				let b = 0;
+				for (let i = a.length - 1; i >= 0; i--) {
+					b += a[i];
+					if (i == 0) {
+						c += a[i] + '=';
+						continue;
+					}
+					c += a[i] + '+';
+				}
+				document.write(c + b);
+			}
+			test([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+			document.write('<hr>');
+
+			document.write('<h1>三、</h1>');
+			document.write('请输入a：');
+			document.write('<input type="text" class="a">');
+			document.write('<br>');
+			document.write('请输入b：');
+			document.write('<input type="text" class="b">');
+			document.write('<br>');
+			document.write('<button>比较</button>');
+			document.write('<p></p>');
+			const inputa = document.querySelector('.a');
+			const inputb = document.querySelector('.b');
+			const pare = document.querySelector('p');
+			document.querySelector('button').onclick = function(e) {
+				if (isNaN(inputa.value) || isNaN(inputb.value) || inputa.value === '' || inputb.value === '') {
+					pare.textContent = '请输入数字';
+				} else {
+					if (Math.floor(inputa.value) > Math.floor(inputb.value)) {
+						pare.textContent = 'a的数值大';
+					} else if (Math.floor(inputa.value) < Math.floor(inputb.value)) {
+						pare.textContent = 'b的数值大';
+					}
+				}
+			}
+
+			document.write('<hr>');
 		</script>
 	</body>
 </html>
