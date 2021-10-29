@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>四则运算</h1>
+		<input type="text" class="num1">
+		<select name="operation" id="operation">
+			<option value="plus">+</option>
+			<option value="subtract">-</option>
+			<option value="multiply">*</option>
+			<option value="divide">/</option>
+		</select>
+		<input type="text" class="num2">
+		<button class="submit">=</button>
+		<input type="text" class="result">
+		<script>
+			document.write('<h1>4.1</h1>')
+			let arr = [];
+
+			function dxu(name) {
+				this.name = name;
+				for (let i = name.length - 1; i >= 0; i--) {
+					arr.push(name[i]); //在arr数组后添加name.lengthd的倒叙值
+				}
+				document.write(arr.join('')) //把arr分隔开
+
+			}
+			let d2 = new dxu('b.p.m.f.d.t.n.l')
+			document.write('<hr>');
+
+			// 
+			document.write('<h1>4.2</h1>')
+
+			function ip(iip) {
+				let a = iip.split('.');
+				let b = iip.replace(a[a.length - 1], '*');
+				document.write('ip地址' + b);
+			}
+			let s1 = new ip('192.168.1.10')
+			document.write('<br>')
+			let s2 = new ip('1.2.3.4')
+			document.write('<hr>');
+
+			//
+			document.write('<h1>4.3</h1>')
+			let d = new Date();
+			let mon = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+			let week = '日一二三四五六';
+			document.write(
+				`${d.getFullYear()}年${mon[d.getMonth()]}月${d.getDay()}日,${d.getHours()}:${d.getMinutes()}:${d.getSeconds()},星期${week[d.getDay()]}`
+				)
+			document.write('<hr>');
+
+
+			document.write('<h1>4.4</h1>')
+
+			function reny(name) {
+				this.name = name;
+				let bi = '';
+				if (name.length > 8) {
+					b1 = '不'
+				} else {
+					b1 = '';
+				}
+				document.write('字符值:' + name + '</br>');
+				document.write(`字符串长${b1}符合要求`);
+			}
+			let con = new reny('qwertyuio');
+			document.write('<hr>');
+
+			//
+			document.write('<h1>5.2</h1>')
+			const p = document.querySelector('p');
+
+			function rnd(m, n) {
+				if (m > n) {
+					return '输入有误，第一个数不能大于第二个数';
+				}
+				return '四位随机数:' + (Math.floor(Math.random() * (n - m + 1)) + m);
+			}
+			document.write(rnd(1000, 9999));
+
+
+			//四则运算
+			let num1 = document.querySelector('.num1');
+			let num2 = document.querySelector('.num2');
+			let result = document.querySelector('.result');
+			let operation = document.querySelector('#operation');
+			let btn = document.querySelector('.submit');
+			btn.onclick = () => {
+				let [v1, v2] = [+num1.value.trim(), +num2.value.trim()];
+				if (num1.value === '' || isNaN(v1)) {
+					result.value = '';
+					alert('您第一个输入框中不是数字，请重新输入！');
+					return;
+				}
+				if (num2.value === '' || isNaN(v2)) {
+					result.value = '';
+					alert('您第二个输入框中不是数字，请重新输入！');
+					return;
+				}
+				if (v2 === 0 && operation.value === 'divide') {
+					result.value = '';
+					alert('除法第二个值不能为零！');
+					return;
+				}
+				switch (operation.value) {
+					case 'plus':
+						result.value = v1 + v2;
+						break;
+					case 'subtract':
+						result.value = v1 - v2;
+						break;
+					case 'multiply':
+						result.value = v1 * v2;
+						break;
+					case 'divide':
+						result.value = v1 / v2;
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>
