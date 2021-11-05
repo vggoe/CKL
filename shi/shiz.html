@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body {
+				height: 2000px;
+			}
+
+			.frist {
+				width: 300px;
+				height: 300px;
+				border: solid 1px black;
+			}
+
+			.yah {
+				float: left;
+				width: 100px;
+				height: 40px;
+				background-color: #aeccee;
+				margin-bottom: 3px;
+				text-align: center;
+				line-height: 40px;
+			}
+
+			.yak {
+				float: left;
+				width: 400px;
+				height: 40px;
+				background-color: #fedcb9;
+				line-height: 35px;
+				margin-left: 3px;
+				margin-bottom: 3px;
+			}
+
+			.ll {
+				float: left;
+				width: 502px;
+				height: 40px;
+				text-align: center;
+				line-height: 35px;
+				background-color: #a9bccb;
+			}
+
+			form {
+				width: 550px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>第一题</h1>
+		<input type="checkbox" class="allx">全选/全不选<button class="fx">反选</button><br /><br />
+		<div class="frist">
+			<input type="checkbox" class="littlecheckbox">&nbsp复选框说明信息<br />
+			<input type="checkbox" class="littlecheckbox">&nbsp复选框说明信息<br />
+			<input type="checkbox" class="littlecheckbox">&nbsp复选框说明信息<br />
+			<input type="checkbox" class="littlecheckbox">&nbsp复选框说明信息<br />
+			<input type="checkbox"
+				class="littlecheckbox">&nbsp复选框说明信息<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<h1>第二题</h1>
+			<form>
+				<label>姓名</label>:
+				<input type="text" class="name"><br>
+				<label>密码</label>:
+				<input type="password" class="mm"><br>
+				性别:
+				<input type="radio" name="a" class="man">男
+				<input type="radio" name="a" class="woman">女<br>
+				<label>年龄</label>:
+				<select>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+				</select><br>
+				<label>爱好</label>:
+				<input type="checkbox" class="book">读书 <input type="checkbox" class="music">音乐 <input type="checkbox"
+					class="inter">上网<br>
+				<label>简介</label>:
+				<textarea rows="10" cols="25" class="jian"></textarea><br>
+				<input type="submit" class="btn1"><input type="reset" style="margin-left:10px">
+			</form>
+			<hr>
+			<form>
+				<h2 style="margin-left:150px;">Information Form</h2>
+				<div class="yah"><label>name</label></div>
+				<div class="yak"><input style="height:20px" type="text" class="name1"></div><br>
+				<div class="yah"><label>pwd</label></div>
+				<div class="yak"><input style="height:20px" type="password" class="mm1"></div><br>
+				<div class="yah"><label>sex</label></div>
+				<div class="yak"><input type="radio" name="a" class="man1">male <input type="radio" name="a"
+						class="woman1">female</div>
+				<div class="yah"><label>age</label></div>
+				<div class="yak">
+					<select>
+						<option>18</option>
+						<option>19</option>
+						<option>20</option>
+						<option>21</option>
+						<option>22</option>
+					</select>
+				</div>
+				<div class="yah"><label>course</label></div>
+				<div class="yak"><input type="checkbox" name="a" class="chinese">Chinese <input type="checkbox" name="b"
+						class="math">Math <input type="checkbox" name="ac" class="english">English</div><br>
+				<div class="back3">
+					<input style="height: 30px;" type="submit" value="Submit it!" class="btn2"> <input
+						style="height: 30px;" type="reset" value="Reset it!">
+				</div>
+			</form>
+			<h1>第三题</h1>
+			<img src="img/e-r图.png">
+			<script src="./jquery/jquery.js"></script>
+			<script>
+				$(function() {
+					$(".allx").change(function() {
+						console.log($(this).prop("checked"));
+						$(".littlecheckbox").prop("checked", $(this).prop("checked"));
+					});
+					$(".fx").click(function() {
+						$(".littlecheckbox").each(function() {
+							this.checked = !this.checked;
+							if ($(".littlecheckbox:checked").length === $(".littlecheckbox").length) {
+								$(".allx").prop("checked", true);
+							} else {
+								$(".allx").prop("checked", false);
+							}
+						});
+					});
+					$(".littlecheckbox").change(function() {
+						if ($(".littlecheckbox:checked").length === $(".littlecheckbox").length) {
+							$(".allx").prop("checked", true);
+						} else {
+							$(".allx").prop("checked", false);
+						}
+					});
+				})
+
+				//第二题
+				$(function() {
+					$(".btn1").click(function() {
+						if ($(".name").val() == "") {
+							alert("表单不能提交,名字不能为空");
+						}
+						if ($(".mm").val().length < 2 || $(".mm").val().length > 10) {
+							alert("表单不能提交,密码格式错误");
+
+						}
+						if ($(".man:checked").length + $(".woman:checked").length == 0) {
+							alert("表单不能提交，请至少选择一个性别");
+						}
+						if ($(".book:checked").length + $(".music:checked").length + $(".inter:checked").length ==
+							0) {
+							alert("表单不能提交，请至少选择一个爱好");
+						}
+						if ($(".jian").val().length < 10) {
+							alert("表单不能提交，请至少写十个字");
+						} else {
+							document.write('<p>恭喜你成功了！</p>'); //跳转页面没有实现
+						}
+					});
+
+				})
+				$(function() {
+					$(".btn2").click(function() {
+						if ($(".name1").val() == "") {
+							alert("表单不能提交,名字不能为空");
+						}
+						if ($(".mm1").val().length < 2 || $(".mm1").val().length > 10) {
+							alert("表单不能提交,密码格式错误");
+
+						}
+						if ($(".man1:checked").length + $(".woman1:checked").length == 0) {
+							alert("表单不能提交，请至少选择一个性别");
+						}
+						if ($(".chinese:checked").length + $(".math:checked").length + $(".english:checked")
+							.length == 0) {
+							alert("表单不能提交，请至少选择两个爱好");
+						} else {
+
+							document.write('<p>恭喜你成功了！</p>');
+						}
+					});
+
+				})
+			</script>
+
+		</div>
+	</body>
+</html>
