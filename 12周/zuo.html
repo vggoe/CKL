@@ -5,8 +5,9 @@
 		<title>此网页</title>
 		<style>
 			a {
-				text-decoration: none;
+				cursor: pointer;
 			}
+			
 		</style>
 	</head>
 	<body>
@@ -58,20 +59,20 @@
 		<button id='btn2'>清空列表</button>
 		<script src="./jquery.min.js"></script>
 		<script>
-			let fock = '<a href="">&times</a>';
 			$("#btn1").click(function() {
 				let trea = $('#text').val();
 				if (trea === '') {
 					alert('还没填写内容')
 				} else {
-					var aLi = `<li><p>${fock} ${trea}</p></li>`;
+					var aLi = `<li><a>&times</a> ${trea}</li>`;
 					$('ol').prepend(aLi);
+					$('ol li >a').click(function() {
+				    $(this).parent().remove();
+			});
 				}
 			});
 
-			$('fock').click(function() {
-				$('li').remove();
-			});
+			
 
 			$(document).ready(function() {
 				$("#btn2").click(function() {
