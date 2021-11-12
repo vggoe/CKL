@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>此网页</title>
+		<style>
+			a {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>php代码</h1>
+		<pre>
+		echo '1-100的数:';
+		for ($i=1;$i<=100;$i++){
+			echo $i.' ';
+			};
+			echo '<br>';
+			echo '<br>';
+		</pre>
+
+		<pre>
+		echo '1-100的偶数:';
+		for ($i=2;$i<=100;$i+=2){
+		echo $i.' ';	
+		};
+			echo '<br>';
+			echo '<br>';
+		</pre>
+
+		<pre>
+		echo '1-100:';
+		for ($i=1;$i<=100;$i++){
+			if($i%3===0&&$i%5===0){
+				echo 'foobar'.' ';
+			}else if($i%3===0){
+				echo 'foo'.' ';
+			}else if($i%5===0){
+				echo 'bar'.' ';
+			}else{
+				echo $i.' ';
+			}
+			};
+		</pre>
+		<h1>添加与删除</h1>
+		<input type="text" id="text">
+		<input type="submit" value="添加" id='btn1'>
+		<ol>
+		</ol>
+		<button id='btn2'>清空列表</button>
+		<script src="./jquery.min.js"></script>
+		<script>
+			let fock = '<a href="">&times</a>';
+			$("#btn1").click(function() {
+				let trea = $('#text').val();
+				if (trea === '') {
+					alert('还没填写内容')
+				} else {
+					var aLi = `<li><p>${fock} ${trea}</p></li>`;
+					$('ol').prepend(aLi);
+				}
+			});
+
+			$('fock').click(function() {
+				$('li').remove();
+			});
+
+			$(document).ready(function() {
+				$("#btn2").click(function() {
+					$('ol').empty();
+				});
+			});
+		</script>
+	</body>
+</html>
